@@ -1,5 +1,6 @@
 const express = require('express')
 const nunjucks = require('nunjucks')
+const courses = require('./data')
 
 const server = express()
 
@@ -16,11 +17,37 @@ nunjucks.configure("views", {
 
 
 server.get("/", function(req, res){
-    return res.render("content")
+    const dataAbout = {
+        links: [
+            {name: "Github", url: "https://github.com/Rocketseat"},
+            {name: "Instagram", url: "https://www.instagram.com/rocketseat_oficial/?hl=pt-br"},
+            {name: "Facebook", url: "https://www.facebook.com/rocketseat/"}
+        ]
+    }
+    return res.render("content", {items: courses, about: dataAbout})
 })
 
 server.get("/description", function(req, res){
-    return res.render("description")
+    const dataAbout = {
+        logo: "https://pbs.twimg.com/profile_images/953595371875422210/0pWsfSSp_400x400.jpg",
+        title: "Rocketseat",
+        role: "Sobre a empresa",
+        description: "Busca abrir um mundo de possibilidades através do ensino da programação para todos.",
+        techs: [
+            {name: "JavaScript"},
+            {name: "JavaScript ES6"},
+            {name: "CSS"},
+            {name: "HTML"},
+            {name: "ReactJS"},
+            {name: "React Native"}
+        ],
+        links: [
+            {name: "Github", url: "https://github.com/Rocketseat"},
+            {name: "Instagram", url: "https://www.instagram.com/rocketseat_oficial/?hl=pt-br"},
+            {name: "Facebook", url: "https://www.facebook.com/rocketseat/"}
+        ]
+    }
+    return res.render("description", {about: dataAbout})
 })
 
 server.use(function(req, res) {
