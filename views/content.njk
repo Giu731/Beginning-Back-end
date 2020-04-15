@@ -14,49 +14,23 @@
        
 
         <section class="courses">
-            <div class="course" id="starter">
+        
+        {% for item in items %}
+            <div class="course" id="{{item.id}}">
                 <div class="couse-logo">
-                    <img src="https://skylab.rocketseat.com.br/static/64c237ccff807c054339a62d53b4b402.svg"
-                    alt="logo starter">
+                    <img src="{{item.logo}}"
+                    alt="logo {{item.id}}">
                 </div>
 
                 <div class="course-info">
-                    <p>5 Módulos</p>
-                    <p class="cost-info">Free</p>
+                    <p>{{item.modules}}</p>
+                    <p class="cost-info">{{item.price}}</p>
                 </div>
             </div>
+        {% endfor %}
 
-            <div class="course" id="launchbase">
-                <div class="couse-logo">
-                    <img src="https://skylab.rocketseat.com.br/static/0828532024cb46921a6b5e941f8d788d.svg"
-                    alt="logo launchbase">
-                </div>
-
-                <div class="course-info">
-                    <p>14 Módulos</p>
-                    <p class="cost-info">Paid</p>
-                </div>
-            </div>
-
-            <div class="course" id="gostack">
-                <div class="couse-logo">
-                    <img src="https://skylab.rocketseat.com.br/static/83a178a0653dab1d55e2ed7946465975.svg"
-                    alt="logo gostack">
-                </div>
-
-                <div class="course-info">
-                    <p>14 Módulos</p>
-                    <p class="cost-info">Paid</p>
-                </div>
-            </div>
         </section>
 
-        <div class="links" id="links-footer">
-            <a href="https://github.com/Rocketseat" target="_blank">Github</a>
-            <a href="https://www.instagram.com/rocketseat_oficial/?hl=pt-br" target="_blank">Instagram</a>
-            <a href="https://www.facebook.com/rocketseat/" target="_blank">Facebook</a>
-
-        </div>
         
         <div class="modal-overlay">
             <div class="modal">

@@ -8,30 +8,20 @@
 {% block content %}
         <div id="wrapper">
             <div id="logo">
-                <img src="https://pbs.twimg.com/profile_images/953595371875422210/0pWsfSSp_400x400.jpg"
-            alt="logo empresa" >
+                <img src="{{about.logo}}"
+            alt="logo {{about.title}}" >
             </div>
-            <h1>Rocketseat</h1>
-            <h2>Sobre a empresa</h2>
-            <p>Busca abrir um mundo de possibilidades através do ensino da programação para todos.</p>
+            <h1>{{about.title}}</h1>
+            <h2>{{about.role}}</h2>
+            <p>{{about.description}}</p>
             <div class="lista">
                 <p>Principais tecnologias utilizadas:</p>
             <ul>
-                <li>JavaScript</li>
-                <li>JavaScript ES6</li>
-                <li>CSS</li>
-                <li>HTML</li>
-                <li>ReactJS</li>
-                <li>React Native</li>
+            {% for tech in about.techs%}
+                <li>{{tech.name}}</li>
+            {% endfor %} 
             </ul>
             </div>
-
-        </div>
-
-        <div class="links" id="links-footer">
-            <a href="https://github.com/Rocketseat" target="_blank">Github</a>
-            <a href="https://www.instagram.com/rocketseat_oficial/?hl=pt-br" target="_blank">Instagram</a>
-            <a href="https://www.facebook.com/rocketseat/" target="_blank">Facebook</a>
 
         </div>
 
