@@ -5,8 +5,7 @@ const modal = modalOverlay.querySelector(".modal")
 for(let course of courses){
     course.addEventListener("click", function(){
         const courseId = course.getAttribute("id")
-        modalOverlay.classList.add("active")
-        modalOverlay.querySelector("iframe").src=`https://rocketseat.com.br/${courseId}`
+        window.location.href=`/course/:${courseId}`
     })
 }
 
