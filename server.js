@@ -50,6 +50,23 @@ server.get("/description", function(req, res){
     return res.render("description", {about: dataAbout})
 })
 
+// server.get("/courses/:id", function(req, res) {
+//     const id = req.params.id;
+  
+//     return res.send(`O id fornecido na rota é: ${id}`);
+//   });
+
+server.get("/course/:id", function(req, res) {
+    const id = req.params.id
+    const course = courses.find(function(course){
+        if (course.id == id){
+            return true
+        }
+    })
+    // return res.send(`O id fornecido na rota é: ${id}`)
+    return res.render("coursespage", {item: course})
+})
+
 server.use(function(req, res) {
     res.status(404).render("not-found")
 })
